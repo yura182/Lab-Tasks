@@ -1,5 +1,6 @@
 package java8;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -15,5 +16,15 @@ public class HomeWork {
                 .filter(index -> index % 2 != 0)
                 .mapToObj(index -> index + ". " + names.get(index))
                 .collect(Collectors.joining(", "));
+    }
+
+    /**
+     * The method map list of string to uppercase and then sort descending
+     */
+    public List<String> task2(List<String> strings) {
+        return strings.stream()
+                .map(String::toUpperCase)
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
     }
 }
