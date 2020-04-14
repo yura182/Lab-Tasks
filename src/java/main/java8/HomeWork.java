@@ -2,6 +2,7 @@ package java8;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -36,12 +37,42 @@ public class HomeWork {
      */
     public String task3v1(List<String> numbers) {
         return numbers.stream()
-                .map(n -> n.split("\\D+"))
-                .flatMap(Arrays::stream)
+                .flatMap(x -> Arrays.stream(x.split("\\D")))
                 .collect(Collectors.joining(","));
     }
 
     public String task3v2(List<String> numbers) {
         return String.join(",", numbers);
+    }
+
+    /**
+     * Using Stream.iterate, make an infinite stream of random numbers — not by
+     * calling Math.random but by directly implementing a linear congruential generator. In such a
+     * generator, you start with x[0] = seed and then produce x[n + 1] = 1 (a x[n] + c) % m, for
+     * appropriate values of a, c, and m. You should implement a method with parameters a, c, m,
+     * and seed that yields a Stream<Long>. Try out a = 25214903917, c = 11, and m = 2^48.
+     */
+    public Stream<Long> task4(long a, long c, long m, long seed) {
+        return Stream.iterate(seed, r -> (a * r + c) % m);
+    }
+
+    /**
+     * Write a method public <T> Stream<T> zip(Stream<T> first, Stream<T> second) that
+     * alternates elements from the stream first and second, stopping when one of them runs out of
+     * elements.
+     */
+    public static <T> Stream<T> task5(Stream<T> first, Stream<T> second) {
+        Iterator<T> i2 = second.iterator();
+
+        Stream.Builder<T> builder = Stream.builder();
+
+        first.forEach(x -> {
+            if (i2.hasNext()) {
+                builder.add(x);
+                builder.add(i2.next());
+            }
+        });
+
+        return  builder.build();
     }
 }
