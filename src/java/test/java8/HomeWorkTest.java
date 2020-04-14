@@ -41,4 +41,24 @@ public class HomeWorkTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void shouldReturnStringTask3v1() {
+        List<String> strings = Arrays.asList("1, 2, 0", "4, 5");
+
+        String actual = homeWork.task3v1(strings);
+        String expected = "1,2,0,4,5";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldReturnStringTask3v2() {
+        List<String> strings = Arrays.asList("1,2,0", "4,5");
+
+        String actual = homeWork.task3v2(strings);
+        String expected = "1,2,0,4,5";
+
+        assertEquals(expected, actual);
+    }
 }

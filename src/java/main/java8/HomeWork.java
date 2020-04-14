@@ -1,9 +1,11 @@
 package java8;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class HomeWork {
 
@@ -26,5 +28,20 @@ public class HomeWork {
                 .map(String::toUpperCase)
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
+    }
+
+    /**
+     * Given and collection = Arrays.asList ("1, 2, 0", "4, 5")
+     * From the collection get all the numbers listed, separated by commas from all the elements
+     */
+    public String task3v1(List<String> numbers) {
+        return numbers.stream()
+                .map(n -> n.split("\\D+"))
+                .flatMap(Arrays::stream)
+                .collect(Collectors.joining(","));
+    }
+
+    public String task3v2(List<String> numbers) {
+        return String.join(",", numbers);
     }
 }
