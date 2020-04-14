@@ -37,7 +37,7 @@ public class HomeWork {
      */
     public String task3v1(List<String> numbers) {
         return numbers.stream()
-                .flatMap(x -> Arrays.stream(x.split("\\D")))
+                .flatMap(x -> Arrays.stream(x.split("\\D+")))
                 .collect(Collectors.joining(","));
     }
 
