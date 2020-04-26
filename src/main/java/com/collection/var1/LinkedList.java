@@ -1,6 +1,6 @@
-package com.example.collection.var1;
+package java.collection.var1;
 
-import com.example.collection.List;
+import java.collection.List;
 
 public class LinkedList<E> implements List<E> {
     private int size;

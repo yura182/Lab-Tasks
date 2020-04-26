@@ -1,4 +1,4 @@
-package com.example.collection;
+package java.collection;
 
 //https://habr.com/ru/users/tarzan82/posts/
 public interface List<E> {
