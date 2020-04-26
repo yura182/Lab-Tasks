@@ -1,15 +1,12 @@
-package java.collection.var1;
+package com.collection.var1;
 
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
 
-@RunWith(MockitoJUnitRunner.class)
 public class ArrayListTest {
     private ArrayList<Integer> items;
 

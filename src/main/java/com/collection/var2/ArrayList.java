@@ -1,6 +1,6 @@
-package java.collection.var2;
+package com.collection.var2;
 
-import java.collection.List;
+import com.collection.List;
 
 public class ArrayList<E> implements List<E> {
     private int size;

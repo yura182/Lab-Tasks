@@ -1,4 +1,4 @@
-package java.collection.var2;
+package com.collection.var2;
 
 import org.junit.Before;
 import org.junit.Rule;

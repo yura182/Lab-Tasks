@@ -1,6 +1,6 @@
-package java.collection.var1;
+package com.collection.var1;
 
-import java.collection.List;
+import com.collection.List;
 
 public class ArrayList<E> implements List<E> {
     private static final int DEFAULT_SIZE = 2;
