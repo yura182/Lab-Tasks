@@ -1,12 +1,16 @@
 package com.collection.var2;
 
+import com.yura.Log;
+import com.yura.runner.LoggingRunner;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
 
 import static org.junit.Assert.assertEquals;
 
+@RunWith(LoggingRunner.class)
 public class ArrayListTest {
     private ArrayList<Integer> items;
 
@@ -45,6 +49,7 @@ public class ArrayListTest {
     }
 
     @Test
+    @Log
     public void size_ShouldReturnOneForOneItemInList() {
         items.addItem(1);
 
